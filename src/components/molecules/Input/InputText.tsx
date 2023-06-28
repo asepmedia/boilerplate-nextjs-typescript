@@ -16,9 +16,11 @@ export interface IInputTextProps extends IInputProps {
 
 function InputText(props: IInputTextProps) {
   const { labelText, fieldName, errors, isRequired, type, ...rest } = props;
+
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+
   const isError = errors && fieldName && errors[fieldName];
   const isPassword = type === "password";
-  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const toggleShowPassword = () => {
     setShowPassword((prev) => !prev);
@@ -48,7 +50,7 @@ function InputText(props: IInputTextProps) {
             id={fieldName}
             name={fieldName}
             type={!isPassword ? type : showPassword ? "text" : "password"}
-            appendClassName={`${isError && "!border-danger !pr-8"}`}
+            className={`${isError && "!border-danger !pr-8"}`}
             {...rest}
           />
           {!isPassword ? (

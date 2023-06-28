@@ -1,3 +1,4 @@
+import Button from "@/components/atoms/Button";
 import { InputText } from "@/components/molecules";
 import Layout from "@/components/organism/Layout";
 
@@ -32,6 +33,9 @@ export default function AuthRegisterPage() {
                   },
                 }}
               />
+            </div>
+            <div className="mb-5">
+              <Button>Test</Button>
             </div>
           </div>
         </div>
