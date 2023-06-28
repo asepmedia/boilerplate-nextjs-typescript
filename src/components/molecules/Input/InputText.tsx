@@ -1,11 +1,11 @@
-import { Input } from "@/components/atoms";
-import { IInputProps } from "@/components/atoms/Input";
-import React, { useState } from "react";
+import { Input } from '@/components/atoms';
+import { IInputProps } from '@/components/atoms/Input';
+import React, { useState } from 'react';
 import {
   HiOutlineExclamationCircle,
   HiOutlineEye,
   HiOutlineEyeOff,
-} from "react-icons/hi";
+} from 'react-icons/hi';
 
 export interface IInputTextProps extends IInputProps {
   labelText?: string | React.ReactNode;
@@ -20,7 +20,7 @@ function InputText(props: IInputTextProps) {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const isError = errors && fieldName && errors[fieldName];
-  const isPassword = type === "password";
+  const isPassword = type === 'password';
 
   const toggleShowPassword = () => {
     setShowPassword((prev) => !prev);
@@ -31,7 +31,7 @@ function InputText(props: IInputTextProps) {
       <label className="block text-sm font-medium leading-6 text-label select-none">
         <span
           className={`font-body text-sm font-bold text-dark/40 block ${
-            isError ? "text-danger/50" : ""
+            isError ? 'text-danger/50' : ''
           }`}
         >
           {labelText && labelText}
@@ -40,7 +40,7 @@ function InputText(props: IInputTextProps) {
               id={`txt_error_${fieldName}`}
               className="text-danger -top-[0.25em]"
             >
-              {" "}
+              {' '}
               *
             </sup>
           )}
@@ -49,8 +49,8 @@ function InputText(props: IInputTextProps) {
           <Input
             id={fieldName}
             name={fieldName}
-            type={!isPassword ? type : showPassword ? "text" : "password"}
-            className={`${isError && "!border-danger !pr-8"}`}
+            type={!isPassword ? type : showPassword ? 'text' : 'password'}
+            className={`${isError && '!border-danger !pr-8'}`}
             {...rest}
           />
           {!isPassword ? (
@@ -63,7 +63,7 @@ function InputText(props: IInputTextProps) {
             <button
               type="button"
               className={`absolute top-0 flex items-center justify-center h-full right-3 text-sm ${
-                isError && "text-danger"
+                isError && 'text-danger'
               }`}
               onClick={toggleShowPassword}
             >

@@ -1,6 +1,7 @@
-import Button from "@/components/atoms/Button";
-import { InputText } from "@/components/molecules";
-import Layout from "@/components/organism/Layout";
+import Button from '@/components/atoms/Button';
+import { InputText } from '@/components/molecules';
+import OutsideWrapper from '@/components/molecules/Wrapper/OutsideWrapper';
+import Layout from '@/components/organism/Layout';
 
 export default function AuthRegisterPage() {
   return (
@@ -13,23 +14,29 @@ export default function AuthRegisterPage() {
             </div>
             <div className="my-10"></div>
             <div className="mb-5">
-              <InputText
-                fieldName="name"
-                placeholder="email@example.com"
-                labelText={"Email or Username"}
-                isRequired
-              />
+              <OutsideWrapper
+                onClickOutside={(e) => {
+                  console.log(e, 'sds');
+                }}
+              >
+                <InputText
+                  fieldName="name"
+                  placeholder="email@example.com"
+                  labelText={'Email or Username'}
+                  isRequired
+                />
+              </OutsideWrapper>
             </div>
             <div className="mb-5">
               <InputText
                 fieldName="password"
                 type="password"
                 placeholder="********"
-                labelText={"Password"}
+                labelText={'Password'}
                 isRequired
                 errors={{
                   password: {
-                    message: "Password is required",
+                    message: 'Password is required',
                   },
                 }}
               />

@@ -1,21 +1,21 @@
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from 'react';
 import {
   motionContentVariants,
   motionVariants,
-} from "./CardCollapsible.framer";
-import CardCollapsibleHeader from "./CardCollapsibleHeader";
+} from './CardCollapsible.framer';
+import CardCollapsibleHeader from './CardCollapsibleHeader';
 
 interface ICardCollapsible {
   headerClassName?: string;
   title?: string | React.ReactNode | undefined;
   children?: React.ReactNode;
-  initial?: "open" | "collapsed";
+  initial?: 'open' | 'collapsed';
 }
 
 function CardCollapsible(props: ICardCollapsible) {
   const { children, headerClassName, initial, title } = props;
-  const [isCollapse, setIsCollapse] = useState(initial === "open");
+  const [isCollapse, setIsCollapse] = useState(initial === 'open');
 
   const toggleCollapse = () => {
     setIsCollapse((prev) => !prev);
@@ -33,8 +33,8 @@ function CardCollapsible(props: ICardCollapsible) {
         <AnimatePresence initial={false}>
           {isCollapse && (
             <motion.div
-              initial={"collapsed"}
-              animate={"open"}
+              initial={'collapsed'}
+              animate={'open'}
               variants={motionVariants}
               exit="collapsed"
               className="bg-white rounded-b-lg"

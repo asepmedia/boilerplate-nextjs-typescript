@@ -1,6 +1,6 @@
-import { CardCollapsible, InputText } from "@/components/molecules";
-import Layout from "@/components/organism/Layout";
-import useOutsideAlerter from "@/hooks/useOutsideAlerter";
+import { CardCollapsible, InputText } from '@/components/molecules';
+import Layout from '@/components/organism/Layout';
+import useOutsideAlerter from '@/hooks/useOutsideAlerter';
 import {
   BarElement,
   CategoryScale,
@@ -9,9 +9,9 @@ import {
   LinearScale,
   Title,
   Tooltip,
-} from "chart.js";
-import { useRef, useState } from "react";
-import { Bar } from "react-chartjs-2";
+} from 'chart.js';
+import { useRef, useState } from 'react';
+import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(
   CategoryScale,
@@ -26,34 +26,34 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: "top" as const,
+      position: 'top' as const,
     },
     title: {
       display: true,
-      text: "Tasklist Overview",
+      text: 'Tasklist Overview',
     },
   },
 };
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
 export const data = {
   labels,
   datasets: [
     {
-      label: "Open",
+      label: 'Open',
       data: labels.map((data, index: any) => 15 * (index < 1 ? 1 : index)),
-      backgroundColor: "#1B6B93",
+      backgroundColor: '#1B6B93',
     },
     {
-      label: "On Progress",
+      label: 'On Progress',
       data: labels.map((data, index: any) => 10 * (index < 1 ? 1 : index)),
-      backgroundColor: "#FFB140",
+      backgroundColor: '#FFB140',
     },
     {
-      label: "Closed",
+      label: 'Closed',
       data: labels.map((data, index: any) => 20 * (index < 1 ? 1 : index)),
-      backgroundColor: "#EF3054",
+      backgroundColor: '#EF3054',
     },
   ],
 };
@@ -77,14 +77,14 @@ export default function AuthSignInPage() {
     <>
       <Layout>
         <div className="flex w-full h-screen bg-slate-50 pt-5">
-          <div className={"flex container mx-auto px-4"}>
-            <div className={"w-full grid lg:grid-cols-4 gap-2 lg:gap-x-5"}>
+          <div className={'flex container mx-auto px-4'}>
+            <div className={'w-full grid lg:grid-cols-4 gap-2 lg:gap-x-5'}>
               <div className="lg:col-span-3">
                 <div className="mb-5">
                   <Bar options={options} data={data} />
                 </div>
                 <div className="mb-5">
-                  <CardCollapsible title={"Open Tasklist"} initial={"open"}>
+                  <CardCollapsible title={'Open Tasklist'} initial={'open'}>
                     <div className="relative" ref={wrapperRef}>
                       <button type="button" onClick={toggleShowAction}>
                         sds
@@ -99,8 +99,8 @@ export default function AuthSignInPage() {
                 </div>
                 <div className="mb-5">
                   <CardCollapsible
-                    title={"On Progress Tasklist"}
-                    initial={"open"}
+                    title={'On Progress Tasklist'}
+                    initial={'open'}
                     headerClassName="!bg-warning active:!bg-warning/90 hover:!bg-warning/95"
                   >
                     <div>
@@ -108,7 +108,7 @@ export default function AuthSignInPage() {
                         <InputText
                           fieldName="name"
                           placeholder="email@example.com"
-                          labelText={"Email or Username"}
+                          labelText={'Email or Username'}
                           isRequired
                         />
                       </div>
@@ -117,11 +117,11 @@ export default function AuthSignInPage() {
                           fieldName="password"
                           type="password"
                           placeholder="********"
-                          labelText={"Password"}
+                          labelText={'Password'}
                           isRequired
                           errors={{
                             password: {
-                              message: "Password is required",
+                              message: 'Password is required',
                             },
                           }}
                         />
@@ -131,8 +131,8 @@ export default function AuthSignInPage() {
                 </div>
                 <div className="mb-5">
                   <CardCollapsible
-                    title={"Closed"}
-                    initial={"open"}
+                    title={'Closed'}
+                    initial={'open'}
                     headerClassName="!bg-danger active:!bg-danger/90 hover:!bg-danger/95"
                   >
                     <div>
@@ -140,7 +140,7 @@ export default function AuthSignInPage() {
                         <InputText
                           fieldName="name"
                           placeholder="email@example.com"
-                          labelText={"Email or Username"}
+                          labelText={'Email or Username'}
                           isRequired
                         />
                       </div>
@@ -149,7 +149,7 @@ export default function AuthSignInPage() {
                           fieldName="password"
                           type="password"
                           placeholder="********"
-                          labelText={"Password"}
+                          labelText={'Password'}
                           isRequired
                         />
                       </div>

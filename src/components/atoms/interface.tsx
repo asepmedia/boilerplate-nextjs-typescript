@@ -1,1 +1,1 @@
-export type { IInputProps } from "@/components/atoms/Input";
+export type { IInputProps } from '@/components/atoms/Input';

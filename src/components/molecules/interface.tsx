@@ -1,1 +1,1 @@
-export type { IInputTextProps } from "@/components/molecules/Input/InputText";
+export type { IInputTextProps } from '@/components/molecules/Input/InputText';

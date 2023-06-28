@@ -1,7 +1,7 @@
-import { Montserrat } from "next/font/google";
-import React from "react";
+import { Montserrat } from 'next/font/google';
+import React from 'react';
 
-const fontFamily = Montserrat({ subsets: ["latin"] });
+const fontFamily = Montserrat({ subsets: ['latin'] });
 
 interface ILayoutProps {
   children: React.ReactNode;
@@ -12,13 +12,13 @@ function Layout(props: ILayoutProps) {
   return (
     <>
       <div className={`${fontFamily.className}`}>
-        <header className="fixed flex h-[70px] bg-white border-b w-full items-center">
-          <div className={"container mx-auto flex w-full justify-between px-4"}>
+        <header className="fixed flex h-[70px] bg-white/95 border-b w-full items-center backdrop-blur">
+          <div className={'container mx-auto flex w-full justify-between px-4'}>
             <div></div>
             <div className="self-end flex gap-x-3 items-center">
               Hi, <b>Asep Yayat</b>
               <button
-                className={"btn bg-danger px-4 py-2 rounded-lg text-white"}
+                className={'btn bg-danger px-4 py-2 rounded-lg text-white'}
               >
                 <b>Logout</b>
               </button>
