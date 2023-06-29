@@ -1,12 +1,12 @@
 import Button from '@/components/atoms/Button';
 import { InputText } from '@/components/molecules';
-import OutsideWrapper from '@/components/molecules/Wrapper/OutsideWrapper';
 import Layout from '@/components/organism/Layout';
+import OutsideWrapper from '@/components/molecules/Wrapper/OutsideWrapper';
 
 export default function AuthRegisterPage() {
   return (
     <>
-      <Layout>
+      <Layout hideHeader>
         <div className="flex w-full h-screen items-center justify-center bg-slate-50">
           <div className="bg-white border rounded-lg p-5 w-[450px]">
             <div>
@@ -42,7 +42,13 @@ export default function AuthRegisterPage() {
               />
             </div>
             <div className="mb-5">
-              <Button>Test</Button>
+              <Button disabled>Submit</Button>
+            </div>
+            <div className="mb-5">
+              <Button variant={'danger'}>Submit</Button>
+            </div>
+            <div className="mb-5">
+              <Button variant={'warning'}>Submit</Button>
             </div>
           </div>
         </div>
