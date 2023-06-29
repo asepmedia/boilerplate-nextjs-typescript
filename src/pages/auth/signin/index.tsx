@@ -1,6 +1,7 @@
 import { CardCollapsible, InputText } from '@/components/molecules';
 import Layout from '@/components/organism/Layout';
 import useOutsideAlerter from '@/hooks/useOutsideAlerter';
+import { colors } from '@/plugins/tailwind/extends';
 import {
   BarElement,
   CategoryScale,
@@ -12,7 +13,6 @@ import {
 } from 'chart.js';
 import { useRef, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -43,17 +43,17 @@ export const data = {
     {
       label: 'Open',
       data: labels.map((data, index: any) => 15 * (index < 1 ? 1 : index)),
-      backgroundColor: '#1B6B93',
+      backgroundColor: colors.primary,
     },
     {
       label: 'On Progress',
       data: labels.map((data, index: any) => 10 * (index < 1 ? 1 : index)),
-      backgroundColor: '#FFB140',
+      backgroundColor: colors.warning,
     },
     {
       label: 'Closed',
       data: labels.map((data, index: any) => 20 * (index < 1 ? 1 : index)),
-      backgroundColor: '#EF3054',
+      backgroundColor: colors.danger,
     },
   ],
 };

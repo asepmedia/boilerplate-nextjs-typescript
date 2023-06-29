@@ -5,7 +5,7 @@ export default function useOutsideAlerter(ref: any, onClick: any, deps = []) {
     /**
      * Alert if clicked on outside of element
      */
-    function handleClickOutside(event: any) {
+    function handleClickOutside(event: MouseEvent) {
       if (ref.current && !ref.current.contains(event.target)) {
         onClick(event);
       }

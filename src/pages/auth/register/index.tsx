@@ -1,7 +1,7 @@
 import Button from '@/components/atoms/Button';
 import { InputText } from '@/components/molecules';
-import Layout from '@/components/organism/Layout';
 import OutsideWrapper from '@/components/molecules/Wrapper/OutsideWrapper';
+import Layout from '@/components/organism/Layout';
 
 export default function AuthRegisterPage() {
   return (
